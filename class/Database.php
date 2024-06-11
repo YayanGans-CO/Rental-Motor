@@ -1,9 +1,11 @@
 <?php
 
-class Database {
+class Database
+{
     protected $con;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->con = mysqli_connect("localhost", "root", "", "uts_sewamotor");
 
         if (!$this->con) {
@@ -11,11 +13,13 @@ class Database {
         }
     }
 
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->con;
     }
 
-    public function closeConnection() {
+    public function closeConnection()
+    {
         mysqli_close($this->con);
     }
 }
